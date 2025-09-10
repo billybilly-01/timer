@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
+.digital-clock-wrapper {
+  background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+  font-family: 'Orbitron', monospace;
+  color: #00ff00;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.clock-container {
+  background: #000;
+  border: 3px solid #333;
+  border-radius: 15px;
+  padding: 10px 25px;
+  height: 90px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.clock-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 255, 0, 0.03) 2px,
+      rgba(0, 255, 0, 0.03) 4px
+    );
+  pointer-events: none;
+  border-radius: 12px;
+}
+
+.date-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+  gap: 12px;
+}
+
+.date-group {
+  text-align: center;
+  position: relative;
+}
+
+.day-name {
+  font-size: 1rem;
+  font-weight: 900;
+  align-self: center;
+  letter-spacing: 0.5px;
+}
+
+.time-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.am-pm {
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1.0;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  letter-spacing: 0.3px;
+}
+
+.am-pm .active {
+  color: #00ff00;
+}
+
+.am-pm .inactive {
+  color: #333;
+}
+
+.time-display {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.time-group, .seconds-group {
+  text-align: center;
+  position: relative;
+}
+
+.display-number {
+  font-weight: 900;
+  background: #000;
+  border: 2px solid #222;
+  border-radius: 4px;
+  padding: 3px 6px;
+  margin-bottom: 3px;
+  position: relative;
+  overflow: hidden;
+  font-size: 1.1rem;
+  min-width: 32px;
+  transition: opacity 0.2s ease;
+}
+
+.display-number::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 255, 0, 0.1),
+    transparent
+  );
+  pointer-events: none;
+}
+
+.display-number.large {
+  font-size: 1.6rem;
+  min-width: 45px;
+  padding: 4px 8px;
+}
+
+.display-number.medium {
+  font-size: 1.3rem;
+  min-width: 38px;
+  padding: 4px 7px;
+}
+
+.separator {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #00ff00;
+  align-self: center;
+  margin-bottom: 6px;
+  animation: blink 2s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0.3; }
+}
+
+.label {
+  font-size: 0.45rem;
+  font-weight: 400;
+  color: #666;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+/* Interactive effects */
+.display-number:hover {
+  animation: glitch 0.3s;
+  cursor: pointer;
+}
+
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-1px, 1px); }
+  40% { transform: translate(-1px, -1px); }
+  60% { transform: translate(1px, 1px); }
+  80% { transform: translate(1px, -1px); }
+  100% { transform: translate(0); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .clock-container {
+    padding: 15px 20px;
+    margin: 20px;
+    height: auto;
+    min-height: 90px;
+  }
+  
+  .date-section {
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .time-section {
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  .display-number {
+    font-size: 1rem;
+    min-width: 30px;
+    padding: 2px 5px;
+  }
+  
+  .display-number.large {
+    font-size: 1.4rem;
+    min-width: 40px;
+    padding: 3px 6px;
+  }
+  
+  .display-number.medium {
+    font-size: 1.2rem;
+    min-width: 35px;
+    padding: 3px 6px;
+  }
+  
+  .separator {
+    font-size: 1.4rem;
+  }
+  
+  .day-name {
+    font-size: 0.9rem;
+  }
+  
+  .am-pm {
+    font-size: 0.6rem;
+  }
+  
+  .label {
+    font-size: 0.4rem;
+  }
+}
