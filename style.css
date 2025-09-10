@@ -21,8 +21,12 @@ body {
     background: #000;
     border: 3px solid #333;
     border-radius: 15px;
-    padding: 40px;
+    padding: 10px 25px;
+    height: 90px;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .clock-container::before {
@@ -47,9 +51,9 @@ body {
 .date-section {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 30px;
-    gap: 20px;
+    align-items: center;
+    margin-bottom: 5px;
+    gap: 12px;
 }
 
 .date-group {
@@ -58,31 +62,31 @@ body {
 }
 
 .day-name {
-    font-size: 2rem;
+    font-size: 1rem;
     font-weight: 900;
-    align-self: flex-end;
-    letter-spacing: 2px;
+    align-self: center;
+    letter-spacing: 0.5px;
 }
 
 .time-section {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
 }
 
 .am-pm {
-    font-size: 1.2rem;
+    font-size: 0.7rem;
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.0;
     writing-mode: vertical-lr;
     text-orientation: upright;
-    letter-spacing: 1px;
+    letter-spacing: 0.3px;
 }
 
 .time-display {
     display: flex;
-    align-items: flex-end;
-    gap: 15px;
+    align-items: center;
+    gap: 8px;
 }
 
 .time-group, .seconds-group {
@@ -94,9 +98,9 @@ body {
     font-weight: 900;
     background: #000;
     border: 2px solid #222;
-    border-radius: 8px;
-    padding: 10px 15px;
-    margin-bottom: 8px;
+    border-radius: 4px;
+    padding: 3px 6px;
+    margin-bottom: 3px;
     position: relative;
     overflow: hidden;
 }
@@ -117,28 +121,28 @@ body {
 }
 
 .display-number {
-    font-size: 2.5rem;
-    min-width: 80px;
+    font-size: 1.1rem;
+    min-width: 32px;
 }
 
 .display-number.large {
-    font-size: 4rem;
-    min-width: 120px;
-    padding: 15px 20px;
+    font-size: 1.6rem;
+    min-width: 45px;
+    padding: 4px 8px;
 }
 
 .display-number.medium {
-    font-size: 3rem;
-    min-width: 100px;
-    padding: 12px 18px;
+    font-size: 1.3rem;
+    min-width: 38px;
+    padding: 4px 7px;
 }
 
 .separator {
-    font-size: 4rem;
+    font-size: 1.6rem;
     font-weight: 900;
     color: #00ff00;
     align-self: center;
-    margin-bottom: 30px;
+    margin-bottom: 6px;
     animation: blink 2s infinite;
 }
 
@@ -148,10 +152,10 @@ body {
 }
 
 .label {
-    font-size: 0.8rem;
+    font-size: 0.45rem;
     font-weight: 400;
     color: #666;
-    letter-spacing: 2px;
+    letter-spacing: 0.8px;
     text-transform: uppercase;
 }
 
