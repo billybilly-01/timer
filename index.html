@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="clock-container">
+        <div class="date-section">
+            <div class="date-group">
+                <div class="display-number" id="year">2024</div>
+                <div class="label">YEAR</div>
+            </div>
+            <div class="date-group">
+                <div class="display-number" id="month">12</div>
+                <div class="label">MONTH</div>
+            </div>
+            <div class="date-group">
+                <div class="display-number" id="day">25</div>
+                <div class="label">DAY</div>
+            </div>
+            <div class="day-name" id="dayName">SAT</div>
+        </div>
+        
+        <div class="time-section">
+            <div class="am-pm" id="ampm">AM<br>PM</div>
+            <div class="time-display">
+                <div class="time-group">
+                    <div class="display-number large" id="hour">09</div>
+                    <div class="label">HOUR</div>
+                </div>
+                <div class="separator">:</div>
+                <div class="time-group">
+                    <div class="display-number large" id="minute">00</div>
+                    <div class="label">MINUTE</div>
+                </div>
+                <div class="seconds-group">
+                    <div class="display-number medium" id="second">30</div>
+                    <div class="label">SECOND</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

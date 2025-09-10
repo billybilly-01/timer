@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+    font-family: 'Orbitron', monospace;
+    color: #00ff00;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.clock-container {
+    background: #000;
+    border: 3px solid #333;
+    border-radius: 15px;
+    padding: 40px;
+    position: relative;
+}
+
+.clock-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 255, 0, 0.03) 2px,
+            rgba(0, 255, 0, 0.03) 4px
+        );
+    pointer-events: none;
+    border-radius: 12px;
+}
+
+.date-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 30px;
+    gap: 20px;
+}
+
+.date-group {
+    text-align: center;
+    position: relative;
+}
+
+.day-name {
+    font-size: 2rem;
+    font-weight: 900;
+    align-self: flex-end;
+    letter-spacing: 2px;
+}
+
+.time-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.am-pm {
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    letter-spacing: 1px;
+}
+
+.time-display {
+    display: flex;
+    align-items: flex-end;
+    gap: 15px;
+}
+
+.time-group, .seconds-group {
+    text-align: center;
+    position: relative;
+}
+
+.display-number {
+    font-weight: 900;
+    background: #000;
+    border: 2px solid #222;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.display-number::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 255, 0, 0.1),
+        transparent
+    );
+    pointer-events: none;
+}
+
+.display-number {
+    font-size: 2.5rem;
+    min-width: 80px;
+}
+
+.display-number.large {
+    font-size: 4rem;
+    min-width: 120px;
+    padding: 15px 20px;
+}
+
+.display-number.medium {
+    font-size: 3rem;
+    min-width: 100px;
+    padding: 12px 18px;
+}
+
+.separator {
+    font-size: 4rem;
+    font-weight: 900;
+    color: #00ff00;
+    align-self: center;
+    margin-bottom: 30px;
+    animation: blink 2s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0.3; }
+}
+
+.label {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #666;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .clock-container {
+        padding: 20px;
+        margin: 20px;
+    }
+    
+    .date-section {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    .display-number {
+        font-size: 1.8rem;
+        min-width: 60px;
+        padding: 8px 12px;
+    }
+    
+    .display-number.large {
+        font-size: 3rem;
+        min-width: 90px;
+        padding: 12px 15px;
+    }
+    
+    .display-number.medium {
+        font-size: 2.2rem;
+        min-width: 75px;
+        padding: 10px 14px;
+    }
+    
+    .separator {
+        font-size: 3rem;
+    }
+    
+    .day-name {
+        font-size: 1.5rem;
+    }
+    
+    .am-pm {
+        font-size: 1rem;
+    }
+}
+
+/* Glitch effect for added retro feel */
+.display-number:hover {
+    animation: glitch 0.3s;
+}
+
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-1px, 1px); }
+    40% { transform: translate(-1px, -1px); }
+    60% { transform: translate(1px, 1px); }
+    80% { transform: translate(1px, -1px); }
+    100% { transform: translate(0); }
+}
